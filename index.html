@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -172,4 +173,375 @@ section{padding:105px 7%}
 
 /* PRICING */
 .pricing{background:#eaf0f8}
-.plans{display:grid;grid-template-columns:
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.plan{background:white;padding:35px 28px;border:1px solid #dbe3ee;transition:.3s}
+.plan:hover{transform:translateY(-8px)}
+.plan.featured{background:var(--navy);color:white;border-color:var(--navy)}
+.plan small.tag{font-size:10px;letter-spacing:3px;color:var(--blue);font-weight:900}
+.plan h3{font-family:'Barlow Condensed';font-size:39px;margin-top:15px}
+.price{font-family:'Barlow Condensed';font-size:65px;margin:15px 0}
+.price span{font-family:Manrope;font-size:13px}
+.plan p{font-size:12px;line-height:1.8;color:var(--muted)}
+.plan.featured p{color:#b8c6da}
+.plan ul{list-style:none;margin:25px 0 30px;font-size:12px;line-height:3}
+.plan li:before{content:"✓ ";color:var(--blue);font-weight:900}
+.plan .btn{width:100%;text-align:center}
+.plan.featured .btn{background:#80b8ff;color:var(--navy)}
+
+/* BMI */
+.bmi{display:grid;grid-template-columns:1fr 1fr;gap:65px;align-items:center}
+.bmi-copy p{font-size:13px;line-height:2;color:var(--muted);margin-top:25px}
+.calculator{background:#fff;padding:38px;box-shadow:0 20px 60px #101c3210}
+.calculator h3{font-family:'Barlow Condensed';font-size:38px}
+.calculator label{display:block;font-size:10px;letter-spacing:2px;font-weight:900;margin:22px 0 9px}
+.calculator input{
+  width:100%;padding:15px;border:1px solid #dce4ee;
+  outline:none;background:#f8faff;color:var(--navy);
+}
+.calculator input:focus{border-color:var(--blue)}
+.calculator button{width:100%;margin-top:25px}
+#result{min-height:25px;margin-top:20px;text-align:center;color:var(--blue);font-size:13px;font-weight:800}
+
+/* CTA */
+.cta{
+  text-align:center;color:white;
+  background:linear-gradient(120deg,#101c32,#1e477d,#101c32);
+  padding:100px 7%;
+}
+.cta h2{font-family:'Barlow Condensed';font-size:clamp(55px,9vw,105px);line-height:.9}
+.cta p{font-size:13px;color:#c3d6f0;margin:25px 0 30px}
+
+/* FOOTER */
+footer{background:#0b1424;color:white;padding:55px 7% 25px}
+.footer-top{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;padding-bottom:40px}
+.footer-top p{color:#8d9db4;font-size:12px;margin-top:12px}
+.footer-links{display:flex;gap:25px;flex-wrap:wrap}
+.footer-links a{font-size:11px;color:#b7c6db}
+.footer-links a:hover{color:#80b8ff}
+.copyright{
+  border-top:1px solid #ffffff18;padding-top:22px;
+  display:flex;justify-content:space-between;gap:15px;
+  color:#8392a8;font-size:10px;
+}
+
+@media(max-width:900px){
+  .hero-art{right:-100px;opacity:.55}
+  .program-grid,.plans{grid-template-columns:1fr 1fr}
+}
+@media(max-width:700px){
+  nav{height:70px}
+  .menu{display:block}
+  .nav-links{
+    display:none;position:absolute;top:70px;left:0;width:100%;
+    padding:25px;background:#f5f8fc;flex-direction:column;align-items:stretch;
+  }
+  .nav-links.open{display:flex}
+  .nav-cta{text-align:center}
+  .hero{min-height:720px;padding-top:140px}
+  .hero h1{font-size:90px}
+  .hero-art{width:260px;height:260px;right:-100px;top:52%}
+  .sky-circle{width:150px;height:150px}
+  .hero-bottom{font-size:8px}
+  section{padding:80px 7%}
+  .section-head{flex-direction:column;align-items:start}
+  .program-grid,.plans{grid-template-columns:1fr}
+  .about,.bmi{grid-template-columns:1fr}
+  .about-art{min-height:350px}
+  .numbers{grid-template-columns:1fr 1fr}
+  .copyright{flex-direction:column}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <a href="#" class="logo">SKYLINE<span>.</span></a>
+  <div class="nav-links" id="navLinks">
+    <a href="#programs">PROGRAMS</a>
+    <a href="#about">ABOUT</a>
+    <a href="#membership">MEMBERSHIP</a>
+    <a href="#bmi">BMI CHECK</a>
+    <a href="#join" class="nav-cta">JOIN NOW ↗</a>
+  </div>
+  <button class="menu" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">☰</button>
+</nav>
+
+<header class="hero">
+  <div class="hero-content">
+    <div class="eyebrow">URBAN FITNESS • UNLIMITED POTENTIAL</div>
+    <h1>RISE <span>ABOVE.</span></h1>
+    <p>
+      Train higher. Think bigger. Move stronger.
+      Welcome to a new kind of fitness club built for
+      people who refuse to stand still.
+    </p>
+    <a class="btn" href="#programs">EXPLORE THE CLUB ↗</a>
+  </div>
+
+  <div class="hero-art">
+    <div class="orbit"></div>
+    <div class="orbit"></div>
+    <div class="orbit"></div>
+    <div class="sky-circle"></div>
+  </div>
+
+  <div class="hero-bottom">
+    <span>STRENGTH / SPEED / ENDURANCE</span>
+    <span>YOUR CITY. YOUR SUMMIT.</span>
+  </div>
+</header>
+
+<div class="ticker">
+  <span>TRAIN HARDER ✦</span>
+  <span>MOVE SMARTER ✦</span>
+  <span>RISE HIGHER ✦</span>
+  <span>LIVE STRONGER ✦</span>
+</div>
+
+<section class="programs" id="programs">
+  <div class="section-head">
+    <div>
+      <div class="label">01 — FIND YOUR DISCIPLINE</div>
+      <h2 class="heading">BUILT TO<br>PERFORM.</h2>
+    </div>
+    <p class="desc">
+      From strength development to high-intensity conditioning,
+      find the training style that moves you forward.
+    </p>
+  </div>
+
+  <div class="program-grid">
+    <article class="program">
+      <small>01 / POWER</small>
+      <div class="icon">✦</div>
+      <div>
+        <h3>STRENGTH LAB</h3>
+        <p>Build muscle and develop real strength with structured resistance training.</p>
+      </div>
+    </article>
+
+    <article class="program">
+      <small>02 / ENERGY</small>
+      <div class="icon">↗</div>
+      <div>
+        <h3>HIIT STUDIO</h3>
+        <p>High-energy workouts designed to challenge your stamina and endurance.</p>
+      </div>
+    </article>
+
+    <article class="program">
+      <small>03 / MOVEMENT</small>
+      <div class="icon">◈</div>
+      <div>
+        <h3>ATHLETIC FLOW</h3>
+        <p>Improve mobility, coordination, balance and functional performance.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="about-art">
+    <div class="sun"></div>
+    <div class="tower"></div>
+    <span>BUILT ABOVE THE ORDINARY</span>
+  </div>
+
+  <div class="about-copy">
+    <div class="label">02 — OUR PHILOSOPHY</div>
+    <h2 class="heading">A HIGHER<br>STANDARD.</h2>
+    <p>
+      SKYLINE FITNESS brings together expert coaching,
+      modern training spaces and a community built around
+      progress. Whether you're starting fresh or chasing
+      your next personal best, there's a place for you here.
+    </p>
+
+    <div class="features">
+      <div class="feature">
+        <strong>01</strong>
+        <span>EXPERT TRAINERS</span>
+      </div>
+      <div class="feature">
+        <strong>02</strong>
+        <span>MODERN EQUIPMENT</span>
+      </div>
+      <div class="feature">
+        <strong>03</strong>
+        <span>GROUP CLASSES</span>
+      </div>
+      <div class="feature">
+        <strong>04</strong>
+        <span>PERSONAL PLANS</span>
+      </div>
+    </div>
+    <a href="#membership" class="btn">FIND YOUR MEMBERSHIP ↗</a>
+  </div>
+</section>
+
+<div class="numbers">
+  <div class="number"><strong>10K+</strong><span>ACTIVE MEMBERS</span></div>
+  <div class="number"><strong>40+</strong><span>WEEKLY CLASSES</span></div>
+  <div class="number"><strong>25</strong><span>EXPERT COACHES</span></div>
+  <div class="number"><strong>24/7</strong><span>FITNESS ENERGY</span></div>
+</div>
+
+<section class="pricing" id="membership">
+  <div class="section-head">
+    <div>
+      <div class="label">03 — MEMBERSHIP</div>
+      <h2 class="heading">YOUR NEXT<br>LEVEL STARTS.</h2>
+    </div>
+    <p class="desc">
+      Pick your plan and get access to the tools,
+      space and support you need to progress.
+    </p>
+  </div>
+
+  <div class="plans">
+    <article class="plan">
+      <small class="tag">START HERE</small>
+      <h3>CORE</h3>
+      <div class="price">$30<span> / month</span></div>
+      <p>All the essentials for building a consistent routine.</p>
+      <ul>
+        <li>Gym floor access</li>
+        <li>Locker facilities</li>
+        <li>Fitness assessment</li>
+        <li>Equipment orientation</li>
+      </ul>
+      <a href="#join" class="btn">CHOOSE CORE ↗</a>
+    </article>
+
+    <article class="plan featured">
+      <small class="tag">MOST POPULAR</small>
+      <h3>SKYLINE PLUS</h3>
+      <div class="price">$60<span> / month</span></div>
+      <p>More training options for bigger fitness goals.</p>
+      <ul>
+        <li>Unlimited gym access</li>
+        <li>Group fitness classes</li>
+        <li>Monthly progress review</li>
+        <li>Guest pass each month</li>
+      </ul>
+      <a href="#join" class="btn">CHOOSE PLUS ↗</a>
+    </article>
+
+    <article class="plan">
+      <small class="tag">PREMIUM ACCESS</small>
+      <h3>SUMMIT</h3>
+      <div class="price">$100<span> / month</span></div>
+      <p>Personal support and an elevated fitness experience.</p>
+      <ul>
+        <li>All Plus benefits</li>
+        <li>Personal training sessions</li>
+        <li>Nutrition guidance</li>
+        <li>Priority class booking</li>
+      </ul>
+      <a href="#join" class="btn">CHOOSE SUMMIT ↗</a>
+    </article>
+  </div>
+</section>
+
+<section class="bmi" id="bmi">
+  <div class="bmi-copy">
+    <div class="label">04 — KNOW YOUR NUMBERS</div>
+    <h2 class="heading">CHECK YOUR<br>BMI.</h2>
+    <p>
+      Enter your height and weight to calculate your
+      body mass index. BMI is a general screening tool
+      and does not measure body composition or diagnose
+      health conditions.
+    </p>
+  </div>
+
+  <div class="calculator">
+    <h3>BMI CALCULATOR</h3>
+    <form id="bmiForm">
+      <label for="weight">WEIGHT IN KG</label>
+      <input type="number" id="weight" placeholder="Example: 75" min="1" max="500" step="0.1" required>
+
+      <label for="height">HEIGHT IN CM</label>
+      <input type="number" id="height" placeholder="Example: 175" min="50" max="250" step="0.1" required>
+
+      <button type="submit" class="btn">CALCULATE BMI ↗</button>
+    </form>
+    <div id="result" aria-live="polite"></div>
+  </div>
+</section>
+
+<section class="cta" id="join">
+  <div class="label" style="color:#9ecbff">05 — YOUR MOMENT IS NOW</div>
+  <h2>DON'T JUST<br>REACH THE TOP.<br>RISE ABOVE IT.</h2>
+  <p>Your goals deserve a bigger space. Start your journey today.</p>
+  <a href="mailto:hello@skylinefitness.com" class="btn">JOIN SKYLINE ↗</a>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div>
+      <a href="#" class="logo">SKYLINE<span>.</span></a>
+      <p>Rise above. Train beyond.</p>
+    </div>
+    <div class="footer-links">
+      <a href="#programs">Programs</a>
+      <a href="#about">About</a>
+      <a href="#membership">Membership</a>
+      <a href="#bmi">BMI Calculator</a>
+    </div>
+  </div>
+  <div class="copyright">
+    <span>© 2026 SKYLINE FITNESS. ALL RIGHTS RESERVED.</span>
+    <span>BUILT FOR YOUR NEXT LEVEL.</span>
+  </div>
+</footer>
+
+<script>
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
+menuBtn.addEventListener("click", () => {
+  const isOpen = navLinks.classList.toggle("open");
+  menuBtn.setAttribute("aria-expanded", isOpen);
+  menuBtn.textContent = isOpen ? "✕" : "☰";
+});
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("open");
+    menuBtn.setAttribute("aria-expanded", "false");
+    menuBtn.textContent = "☰";
+  });
+});
+
+document.getElementById("bmiForm").addEventListener("submit", event => {
+  event.preventDefault();
+
+  const weight = Number(document.getElementById("weight").value);
+  const height = Number(document.getElementById("height").value);
+  const result = document.getElementById("result");
+
+  if (!weight || !height || weight <= 0 || weight > 500 || height < 50 || height > 250) {
+    result.textContent = "Please enter valid height and weight values.";
+    return;
+  }
+
+  const bmi = weight / Math.pow(height / 100, 2);
+  let category;
+
+  if (bmi < 18.5) category = "Underweight range";
+  else if (bmi < 25) category = "Healthy weight range";
+  else if (bmi < 30) category = "Overweight range";
+  else category = "Obesity range";
+
+  result.textContent = "YOUR BMI: " + bmi.toFixed(1) + " — " + category;
+});
+</script>
+
+</body>
+</html>
+```
